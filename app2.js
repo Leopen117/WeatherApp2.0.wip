@@ -64,21 +64,9 @@ function createCard(date, temp, perci, image, i){
     pic0.src = image;
     textCardBoxHead.innerHTML = 
     `<p id="text" class="card-text"><u><strong>${date}</u></strong><br>Es werden maximal ${temp}°C !<br>${perci}</p>
-      <p class="d-inline-flex gap-1">
-        <a class="btn btn-link" data-bs-toggle="collapse" href="#multiCollapseExample${i}" role="button" aria-expanded="false" aria-controls="multiCollapseExample${i}">Mehr Infos...</a>
-      </p>`;
-    todayDetailWeatherInfo.innerHTML = 
-    `<div class="row">
-        <div class="col">
-          <div class="collapse multi-collapse" id="multiCollapseExample${i}">
-            <div class="card card-body">
-              Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
-              <a class="btn btn-link" data-bs-toggle="collapse" href="#multiCollapseExample${i}" role="button" aria-expanded="false" aria-controls="multiCollapseExample${i}">Weniger Infos</a>
-            </div>
-          </div>
-        </div>
-      </div>`;
-
+    <p class="block">
+      <button type="button" class="btn btn-primary" data-bs-toggle="button">Mehr Infos gefällig?</button>
+    </p>`;
   } else {
     cardBox.innerHTML += 
     `<div class="card mx-auto" style="width: 18rem">
@@ -90,19 +78,8 @@ function createCard(date, temp, perci, image, i){
       <p class="block">
         <button type="button" class="btn btn-primary" data-bs-toggle="button">Mehr Infos gefällig?</button>
       </p>`
-        detailWeatherInfo.innerHTML += 
-    `<div class="row">
-      <div class="col">
-        <div class="collapse multi-collapse" id="multiCollapseExample${i}">
-          <div class="card card-body">
-            Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
-            <a class="btn btn-link" data-bs-toggle="collapse" href="#multiCollapseExample${i}" role="button" aria-expanded="false" aria-controls="multiCollapseExample${i}">Weniger Infos</a>
-          </div>
-        </div>
-      </div>
-    </div>`;
+  }}
 
-}}
 // weather chart
 chart = new Chart(document.getElementById('tempChart'), {
   type: 'line',
